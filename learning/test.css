@@ -1,0 +1,8 @@
+h1{text-align: center;
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;} 
+.wq {color: rgb(42, 222, 29);}
+button:hover {color: rgb(43, 224, 23);
+background-color: aqua;
+}
+button:active{background-color: black;}
+

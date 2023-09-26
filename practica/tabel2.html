@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>usecase2</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+         
+        @media screen and (max-width: 600px) {
+            table {
+                width: 100%;
+            }
+
+            th,
+            td {
+                display: block;
+                width: 100%;
+            }
+
+            th {
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <center>
+        <button onclick="scrollToTable()">Go to Table</button>
+        <select name="month" id="month" onchange="getMonth(this.value)">
+            <option value="">Select Month</option>
+            <option value="0">January-March</option>
+            <option value="1">April-June</option>
+            <option value="2">July-September</option>
+        </select>
+        <table id="monData" border="" cellpadding="15">
+            <tr>
+                <th>Client ID</th>
+                <th>Attributed customers per Source</th>
+            </tr>
+        </table>
+        <div id="poweredBy">Powered by FAF
+            <img src="https://scontent.fsbz1-2.fna.fbcdn.net/v/t39.30808-6/326777890_920847885602578_2600930784406450986_n.png?_nc_cat=105&ccb=1-7&_nc_sid=a2f6c7&_nc_ohc=k1RlydO7MvAAX-4F1ur&_nc_ht=scontent.fsbz1-2.fna&oh=00_AfC6Vkr3iUfkM_yyUF-FR1-fnypQlvdyvHZXeTDGYRWgQw&oe=65108024"
+                alt="FAF Logo" style="width: 24px; height: 24px; vertical-align: middle;">
+        </div>
+    </center>
+    <script type="text/javascript">
+
+        function get_days_in_month(month, year) {
+            return new Date(year, month, 0).getDate();
+        }
+
+        function getMonth(selected_month) {
+            var current_year = new Date().getFullYear();
+            var selected_month = parseInt(selected_month);
+            if (selected_month < 0 || selected_month > 2) {
+                document.getElementById("monData").innerHTML = "";
+                document.getElementById("poweredBy").style.display = "none";
+                return;
+            }
+
+            var finTab = "<tr><th>Client ID</th><th>Attributed customers per Source</th></tr>";
+            var days_in_month = get_days_in_month(selected_month, current_year);
+
+            for (var i = 1; i <= days_in_month; i++) {
+                finTab += "<tr>";
+                finTab += "<td></td>"; // sterge datele
+                finTab += "<td></td>"; // sterge Total Clients la tabel
+                finTab += "<tr>";
+            }
+
+            document.getElementById("monData").innerHTML = finTab;
+        }
+
+        function scrollToTable() {
+            var tableElement = document.getElementById("monData");
+            if (tableElement) {
+                tableElement.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

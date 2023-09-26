@@ -1,0 +1,62 @@
+/* Apply some basic styles to the table */
+table {
+  border-collapse: collapse;
+  width: 80%;
+  margin: 20px auto;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the table header */
+th {
+  background-color: #f2f2f2;
+  text-align: left;
+  padding: 10px 15px;
+  font-weight: bold;
+  border-bottom: 2px solid #ddd;
+  text-align: center;
+}
+
+/* Style the table rows */
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+/* Style table cells */
+td {
+  padding: 10px 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Center the buttons and dropdown */
+div {
+  text-align: center;
+  margin-top: 10px;
+}
+
+select, button {
+  padding: 8px;
+  font-size: 14px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+/* Hover effect on buttons and dropdown */
+select:hover, button:hover {
+  background-color: #f2f2f2;
+}
+
+/* Center the table */
+.center {
+  text-align: center;
+}
+
+#poweredBy {
+font-style: italic; }
